@@ -16,8 +16,105 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+    <!-- NAVBAR STYLE -->
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      display: flex;
+      background-color: #1e1e1e;
+      padding: 10px 20px;
+      align-items: center;
+    }
+
+    .nav-item {
+      position: relative;
+      margin-right: 30px;
+    }
+
+    .nav-item > a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      padding: 8px;
+      display: inline-block;
+    }
+
+    .nav-item > a:hover {
+      background-color: #333;
+      border-radius: 4px;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #2a2a2a;
+      min-width: 140px;
+      border-radius: 6px;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.25);
+      z-index: 10;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px 14px;
+      text-decoration: none;
+      color: white;
+      font-size: 15px;
+    }
+
+    .dropdown a:hover {
+      background-color: #444;
+    }
+
+    .nav-item:hover .dropdown {
+      display: block;
+    }
+
+    /* Vega container */
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
 </head>
 <body>
+   <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="nav-item">
+      <a href="../index.html">Nima</a>
+      <div class="dropdown">
+        <a href="view1.html">View 1</a>
+        <a href="view2.html">View 2</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="../Daffa/view1.html">Daffa</a>
+      <div class="dropdown">
+        <a href="../Daffa/view1.html">View 1</a>
+        <a href="../Daffa/view2.html">View 2</a>
+      </div>
+    </div>
+
+    <div class="nav-item">
+      <a href="../Naulfa/view1.html">Naulfa</a>
+      <div class="dropdown">
+        <a href="../Naulfa/view1.html">View 1</a>
+        <a href="../Naulfa/view2.html">View 2</a>
+      </div>
+    </div>
+  </div>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
